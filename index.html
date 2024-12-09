@@ -1,6 +1,12 @@
 <script type="text/javascript">
+    //A1-3とB1-3を結合、二回目でA1-3B1-3とC1-3を結合
     function toOneDimension(previousValue, currentValue) {
+        //関数toOneDimensionの処理回数を★で確認
         alert("★");
+        //previousValueとcurrentValueの値の確認
+        alert(previousValue);
+        alert(currentValue);
+        //cからはじまる配列にしたいので反転
         return currentValue.concat(previousValue);
     }
     var sampleArrayA = [
@@ -8,12 +14,16 @@
         ['B1', 'B2', 'B3'],
         ['C1', 'C2', 'C3']
     ];
+    //Cから始まる配列の要素を順番に取り出してsampleArrayBの値を定義
     var sampleArrayB = sampleArrayA.reduce(toOneDimension);
+    //sampleArrayBの中身の確認
     alert(sampleArrayB);
+　　//for文(document.write)でsampleArrayBの値を使って文字を出力
     for (var counterVar = 0; counterVar < sampleArrayB.length; counterVar++) {
         document.write('sampleArrayB[' + counterVar + ']: ');
         document.write(sampleArrayB[counterVar]);
         document.write('<br />');
+        //for文が何回回っているか確認
         alert("◇");
     }
 </script>
